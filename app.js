@@ -10,7 +10,7 @@ var user = os.userInfo();
 
 ///appendFile to create the txt file and append into it
 //fs.appendFileSync('greeting.txt', 'Hello world\r\n');
-fs.appendFileSync('greeting.txt', `Hello ${user.username}`);
+fs.appendFileSync('greeting.txt', `Hello ${user.username}\r\n`);
 //fs.appendFileSync('D:\\greeting.txt', 'Hello world');
 
 console.log('Ending app...');
