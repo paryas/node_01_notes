@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/paryas/node_01_notes/issues"
   },
-  "homepage": "https://github.com/paryas/node_01_notes#readme"
+  "homepage": "https://github.com/paryas/node_01_notes#readme",
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
 }
