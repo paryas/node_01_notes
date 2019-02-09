@@ -7,10 +7,33 @@ const _ = require('lodash');
 const notes = require('./notes.js');
 const yargs = require('yargs');
 
-var i = 0;
-
+// #region rgs
 //const argv = yargs.argv;
-const argv = yargs.command().argv;
+const titleOption = {
+  describe: 'Title of note',
+  demand: true,
+  alias: 't'
+};
+
+const bodyOption = {
+  describe: 'Title of note',
+  demand: true,
+  alias: 't'
+};
+
+const argv = yargs
+  .command('add', 'Add a new note', {
+    title: titleOption,
+    body: bodyOption
+  })
+  .command('list', 'List all notes')
+  .command('read', 'Read a note', {
+    title: titleOption
+  })
+  .command('remove', 'Remove a note', {
+    title: titleOption
+  })
+  .help().argv;
 var command = argv._[0];
 
 // console.log('Process', process.argv);
@@ -18,6 +41,7 @@ var command = argv._[0];
 // var command = process.argv[2];
 
 // console.log('command: ', command);
+// #endregion
 
 if (command === 'add') {
   var note = notes.addNote(argv.title, argv.body);
@@ -72,6 +96,6 @@ if (command === 'add') {
 //   `\r\nHello ${user.username}! You are ${notes.age}.`
 // );
 // fs.appendFileSync('D:\\greeting.txt', 'Hello world');
-//#endregion
 
-console.log('Ending app...');
+// console.log('Ending app...');
+//#endregion
